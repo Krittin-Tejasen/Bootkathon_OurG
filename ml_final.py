@@ -4,7 +4,7 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
 
-df = pd.read_csv(r"/content/drive/MyDrive/30June_EM_2025_HackathonData/monthly_outbound_summary_filled.csv")
+df = pd.read_csv("./monthly_outbound_summary_filled.csv")
 df.rename(columns={'MONTH': 'YEAR_MONTH'}, inplace=True)
 df.rename(columns={'TOTAL_QUANTITY': 'TOTAL_OUTBOUND_MT'}, inplace=True)
 
@@ -74,4 +74,4 @@ result_df["ACTUAL_OUTBOUND_MT"] = y.values
 result_df["PREDICTED_OUTBOUND_MT"] = y_pred
 result_df["LABEL"] = df["LABEL"]
 
-result_df.to_csv("/content/drive/MyDrive/30June_EM_2025_HackathonData/outbound_predictions_for_powerbi.csv")
+result_df.to_csv("./outbound_predictions_for_powerbi.csv")
